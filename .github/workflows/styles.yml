@@ -1,8 +1,8 @@
 name: style check
 on: [push]
 jobs:
-  build:
-    name: Build
+  style:
+    name: Style Checks
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
