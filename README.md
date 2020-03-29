@@ -1,6 +1,6 @@
 # GraphQL Server for NYTimes covid-19 database
-## Disclaimer: This is not an official server of the NYTimes
-## Link to data-source [covid-19-data](https://github.com/nytimes/covid-19-data)
+### Disclaimer: This is not an official server of the NYTimes
+### Link to data-source [covid-19-data](https://github.com/nytimes/covid-19-data)
 
 This is a GraphQL server that consumes the NYTimes data=source for covid-19 and serves it using GraphQL queries.
 
