@@ -7,8 +7,12 @@ This is a GraphQL server that consumes the NYTimes data=source for covid-19 and 
 ## Getting Started
 __first clone the repository__  
 ```sh
-$ npm install
-$ npm
+$ yarn install
+$ # development environment
+$ yarn start:dev
+$ # productin
+$ yarn build
+$ yarn start:prod
 ```
 
 __You can navigate to http://localhost:4000 to get to the GraphQL explorer to explorer the API.__
