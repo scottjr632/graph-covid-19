@@ -4,7 +4,6 @@ import { Direction } from '../../common/direction.enum';
 import { CovidInputType } from '../../common/covid/covidFilter.inputType';
 
 import nytdatasource from './datasource';
-import { County, State } from './types';
 
 interface CountyInputType extends CovidInputType {
   county?: string;
@@ -12,11 +11,11 @@ interface CountyInputType extends CovidInputType {
 
 @Service()
 export class NYTimesService {
-  public getAllCountyData(): County[] {
+  public getAllCountyData() {
     return nytdatasource.getCountyData();
   }
 
-  public getAllStateData(): State[] {
+  public getAllStateData() {
     return nytdatasource.getStateData();
   }
 

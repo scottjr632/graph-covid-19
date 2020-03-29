@@ -1,7 +1,7 @@
 export interface State {
   date: string;
   state: string;
-  fips: number;
+  fips: string;
   cases: number;
   deaths: number;
 

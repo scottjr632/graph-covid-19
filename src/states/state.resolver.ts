@@ -20,14 +20,14 @@ export class StateResolver {
   async states(
     @Arg('filter', { nullable: true }) filter?: StateFilter
   ): Promise<PaginatedStateResponse> {
-    let res = this.nytService.getStateDateByFilter(filter);
+    let res = await this.nytService.getStateDateByFilter(filter);
     if (filter?.sort) {
       res = this.nytService.sortByFilter(res, filter);
     }
 
     return {
       total: res.length,
-      data: res,
+      nodes: res,
     };
   }
 

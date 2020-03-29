@@ -8,7 +8,7 @@ type County {
   date: String!
   cases: Float!
   deaths: Float!
-  fips: Float!
+  fips: String!
   county: String!
   state: String!
 }
@@ -26,7 +26,7 @@ type CovidBase {
   date: String!
   cases: Float!
   deaths: Float!
-  fips: Float!
+  fips: String!
 }
 
 input CovidInputType {
@@ -48,14 +48,14 @@ enum Direction {
 
 type PaginatedCountyResponse {
   total: Float!
-  data: [County!]!
+  nodes: [County!]!
   limit: Float
   start: Float
 }
 
 type PaginatedStateResponse {
   total: Float!
-  data: [State!]!
+  nodes: [State!]!
   limit: Float
   start: Float
 }
@@ -81,7 +81,7 @@ type State {
   date: String!
   cases: Float!
   deaths: Float!
-  fips: Float!
+  fips: String!
   state: String!
 }
 

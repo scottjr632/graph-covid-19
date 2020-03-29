@@ -15,7 +15,7 @@ export abstract class CovidBase {
   deaths: number;
 
   @Field()
-  fips: number;
+  fips: string;
 
   /**
    * getHash returns the has for the object

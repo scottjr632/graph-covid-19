@@ -22,7 +22,7 @@ const getStateData = async (): Promise<State[]> => {
   });
 };
 
-class Datasource {
+export class Datasource {
   private static instance: Datasource;
 
   public static getInstance(): Datasource {
@@ -35,9 +35,12 @@ class Datasource {
   private countyData: County[] = [];
   private stateData: State[] = [];
 
-  constructor() {
-    getCountyData().then((res) => (this.countyData = res));
-    getStateData().then((res) => (this.stateData = res));
+  public async initializeData(): Promise<Datasource> {
+    const countyData = await getCountyData();
+    const stateData = await getStateData();
+    this.countyData = countyData;
+    this.stateData = stateData;
+    return this;
   }
 
   public getCountyData(): County[] {

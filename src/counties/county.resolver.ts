@@ -20,14 +20,14 @@ export class CountyResolver {
   async counties(
     @Arg('filter', { nullable: true }) filter?: CountyFilter
   ): Promise<PaginatedCountyResponse> {
-    let res = this.nytService.getCountyDataByFilter(filter);
+    let res = await this.nytService.getCountyDataByFilter(filter);
     if (filter?.sort) {
       res = this.nytService.sortByFilter(res, filter);
     }
 
     return {
       total: res.length,
-      data: res,
+      nodes: res,
     };
   }
 
