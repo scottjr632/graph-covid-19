@@ -1,17 +1,8 @@
 import { InputType, Field } from 'type-graphql';
 
-import { Direction } from './direction.enum';
-import { SortBy } from './covidFilter.enum';
+import { SortCovidInputType } from './sortCovid.type';
 
 const DEFAULT_LAST = 100;
-
-@InputType()
-export class SortCovidInputType {
-  @Field(() => SortBy)
-  sortBy: SortBy;
-  @Field(() => Direction, { defaultValue: Direction.ASC })
-  direction: Direction;
-}
 
 @InputType()
 export class CovidInputType {

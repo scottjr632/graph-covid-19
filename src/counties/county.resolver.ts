@@ -3,22 +3,14 @@ import {
   Query,
   FieldResolver,
   Root,
-  InputType,
   Arg,
-  Field,
 } from 'type-graphql';
 
 import { NYTimesService } from '../services/nytimes/nytimes.service';
-import { CovidInputType } from '../common/covidFilter.inputType';
 
 import { PaginatedCountyResponse } from './paginated-counties.type';
 import { County } from './county.type';
-
-@InputType()
-class CountyFilter extends CovidInputType {
-  @Field({ nullable: true })
-  county?: string;
-}
+import { CountyFilter } from './countyFilter.inputType';
 
 @Resolver(County)
 export class CountyResolver {

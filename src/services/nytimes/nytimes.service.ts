@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 
 import { Direction } from '../../common/direction.enum';
-import { CovidInputType } from '../../common/covidFilter.inputType';
+import { CovidInputType } from '../../common/covid/covidFilter.inputType';
 
 import nytdatasource from './datasource';
 import { County, State } from './types';
