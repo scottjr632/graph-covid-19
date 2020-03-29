@@ -17,7 +17,7 @@ export class StateResolver {
   constructor(private readonly nytService: NYTimesService) {}
 
   @Query(() => PaginatedStateResponse)
-  async getStates(
+  async states(
     @Arg('filter', { nullable: true }) filter?: StateFilter
   ): Promise<PaginatedStateResponse> {
     let res = this.nytService.getStateDateByFilter(filter);

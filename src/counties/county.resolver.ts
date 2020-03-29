@@ -17,7 +17,7 @@ export class CountyResolver {
   constructor(private readonly nytService: NYTimesService) {}
 
   @Query(() => PaginatedCountyResponse)
-  async getCounties(
+  async counties(
     @Arg('filter', { nullable: true }) filter?: CountyFilter
   ): Promise<PaginatedCountyResponse> {
     let res = this.nytService.getCountyDataByFilter(filter);
