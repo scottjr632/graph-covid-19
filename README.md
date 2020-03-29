@@ -6,6 +6,11 @@ This is a GraphQL server that consumes the NY Times data source for covid-19 and
 ## Getting Started
 __Visit https://graph-cv19.iscottrichardson.com/ to use the server__  
 or  
+__Pull Docker image__
+```sh
+$ docker pull scottjr632/graph-covid-19
+```
+or  
 __Create your own__  
 ```sh
 $ git clone https://github.com/scottjr632/graph-covid-19.git && cd $_
