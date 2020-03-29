@@ -21,6 +21,7 @@ async function bootstrap() {
 
   const server = new ApolloServer({
     schema,
+    introspection: true,
     playground: true,
   });
 
