@@ -61,8 +61,8 @@ type PaginatedStateResponse {
 }
 
 type Query {
-  getStates(filter: StateFilter): PaginatedStateResponse!
-  getCounties(filter: CountyFilter): PaginatedCountyResponse!
+  states(filter: StateFilter): PaginatedStateResponse!
+  counties(filter: CountyFilter): PaginatedCountyResponse!
 }
 
 enum SortCovidBy {
