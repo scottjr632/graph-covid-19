@@ -1,7 +1,8 @@
 # GraphQL Server for NY Times covid-19 data set
 [GraphQL Playground](https://graph-cv19.iscottrichardson.com/)
 
-This is a GraphQL server that consumes the NY Times data source for covid-19 and serves it using GraphQL queries.  
+This is a GraphQL server that consumes the NY Times data source for covid-19 and serves it using GraphQL queries.
+
 This server is meant to make access to covid-19 data easier to access. If you do use this data please follow The New York Times Licence and Attribution Guidlines highlighted here https://github.com/nytimes/covid-19-data#license-and-attribution
 
 ## Getting Started
