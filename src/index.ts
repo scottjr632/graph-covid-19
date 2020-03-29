@@ -4,7 +4,7 @@ import express from 'express';
 import morgan from 'morgan';
 import { ApolloServer } from 'apollo-server-express';
 
-import { schema } from './schema';
+import { createSchema } from './createSchema';
 
 const DEFAULT_PORT = 4000;
 const PORT = process.env.PORT || DEFAULT_PORT;
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || DEFAULT_PORT;
 async function bootstrap() {
   const app = express();
   const server = new ApolloServer({
-    schema: await schema(),
+    schema: await createSchema(),
     introspection: true,
     playground: true,
     engine: false,

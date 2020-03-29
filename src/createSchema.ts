@@ -11,7 +11,7 @@ const resolvers = [
   CountyResolver,
 ];
 
-export const schema = async () => buildSchema({
+export const createSchema = async () => buildSchema({
   resolvers,
   container: Container,
   validate: false,
