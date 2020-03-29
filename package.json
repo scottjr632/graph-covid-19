@@ -1,6 +1,6 @@
 {
   "name": "graph-covid-19",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A GraphQL server the NY Times covid-19 database",
   "main": "index.js",
   "scripts": {
