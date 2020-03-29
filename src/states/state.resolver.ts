@@ -4,17 +4,13 @@ import {
   FieldResolver,
   Root,
   Arg,
-  InputType,
 } from 'type-graphql';
 
-import { CovidInputType } from '../common/covidFilter.inputType';
 import { NYTimesService } from '../services/nytimes/nytimes.service';
 
-import { PaginatedStateResponse } from './paginated-states.type';
 import { State } from './state.type';
-
-@InputType()
-class StateFilter extends CovidInputType {}
+import { StateFilter } from './stateFilter.inputType';
+import { PaginatedStateResponse } from './paginated-states.type';
 
 @Resolver(State)
 export class StateResolver {

@@ -1,4 +1,4 @@
-interface Base {
+export interface State {
   date: string;
   state: string;
   fips: number;
@@ -9,8 +9,6 @@ interface Base {
   getHash(): string;
 }
 
-export interface County extends Base {
+export interface County extends State {
   county: string;
 }
-
-export interface State extends Base {}

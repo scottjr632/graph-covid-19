@@ -6,6 +6,7 @@
   "scripts": {
     "style:check": "eslint --ext .js --ext .jsx --ext tsx --ext ts . --quiet --cache",
     "style:fix": "eslint --ext .js --ext .jsx --ext tsx --ext ts . --quiet --fix --cache",
+    "lint": "tslint -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "ts-node src/index.ts",
     "start:dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
@@ -16,7 +17,8 @@
   "pre-push": [
     "format",
     "style:fix",
-    "style:check"
+    "style:check",
+    "lint"
   ],
   "author": "Scott Richardson <scott@scottrichardson.dev>",
   "license": "MIT",

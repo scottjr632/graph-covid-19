@@ -5,7 +5,7 @@ export function PaginatedResponse<T>(TClass: ClassType<T>) {
   abstract class PaginatedResponseClass {
     @Field()
     total: number;
-    @Field((type) => [TClass])
+    @Field(() => [TClass])
     data: T[];
     @Field({ nullable: true })
     limit?: number;
