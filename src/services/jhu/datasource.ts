@@ -1,7 +1,7 @@
 import axios from 'axios';
 import parse from 'csv-parse/lib/sync';
 
-import { DatasourceInterface } from '../../common/DatasourceInterface';
+import { DatasourceInterface } from '../../common/datasourceInterface';
 
 import { Data, ResponseData, GHResponse } from './types';
 import { DAILY_BASE_URL } from './constants';

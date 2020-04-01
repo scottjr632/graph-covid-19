@@ -1,7 +1,7 @@
 import parse from 'csv-parse/lib/sync';
 import axios from 'axios';
 
-import { DatasourceInterface } from '../../common/DatasourceInterface';
+import { DatasourceInterface } from '../../common/datasourceInterface';
 
 import { County, State } from './types';
 import { COUNTY_SOURCE, STATE_SOURCE } from './constants';

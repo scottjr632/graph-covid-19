@@ -4,7 +4,7 @@ import path from 'path';
 import Container from 'typedi';
 import { buildSchema } from 'type-graphql';
 
-import { DatasourceInterface } from './common/DatasourceInterface';
+import { DatasourceInterface } from './common/datasourceInterface';
 
 import nytDatasource from './services/nytimes/datasource';
 import jhuDatasource from './services/jhu/datasource';
