@@ -25,13 +25,11 @@ jobs:
       run: docker build . --file Dockerfile --tag image
     - name: Start container
       run: docker run --rm -d -p 4000:4000 --name my-image image
-    - name: Setup Debug Session
-      uses: csexton/debugger-action@master
     - name: Test image is running
       run: |
         code=$(curl -o /dev/null -s -w "%{http_code}\n" -X POST --header "Content-Type: application/json" \
         --data '{"operationName":null,"variables":{},"query":"{\n  jhu {\n    data {\n      total\n    }\n  }\n}\n"}' \
-        http://localhost:4000)
-        if [[ $code -ne 200 ]]; then exit 1; else exit 0; fi
+        http://localhost:4000) && \
+        if [[ $code -ne 200 ]]; then exit 1; else echo 0; fi
     - name: Stop container
       run: docker stop my-image
