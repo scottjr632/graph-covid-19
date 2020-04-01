@@ -25,6 +25,8 @@ jobs:
       run: docker build . --file Dockerfile --tag image
     - name: Start container
       run: docker run --rm -d -p 4000:4000 --name my-image image
+    - name: Setup Debug Session
+      uses: csexton/debugger-action@master
     - name: Test image is running
       run: |
         code=$(curl -o /dev/null -s -w "%{http_code}\n" -X POST --header "Content-Type: application/json" \
