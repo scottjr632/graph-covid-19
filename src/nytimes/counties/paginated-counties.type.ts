@@ -1,6 +1,6 @@
 import { ObjectType } from 'type-graphql';
 
-import PaginatedResponse from '../common/paginateResponse.type';
+import PaginatedResponse from '../../common/paginateResponse.type';
 
 import { County } from './county.type';
 

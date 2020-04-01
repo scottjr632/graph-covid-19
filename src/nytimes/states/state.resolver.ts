@@ -1,12 +1,6 @@
-import {
-  Resolver,
-  Query,
-  FieldResolver,
-  Root,
-  Arg,
-} from 'type-graphql';
+import { Resolver, Query, FieldResolver, Root, Arg } from 'type-graphql';
 
-import { NYTimesService } from '../services/nytimes/nytimes.service';
+import { NYTimesService } from '../../services/nytimes/nytimes.service';
 
 import { State } from './state.type';
 import { StateFilter } from './stateFilter.inputType';
@@ -16,7 +10,9 @@ import { PaginatedStateResponse } from './paginated-states.type';
 export class StateResolver {
   constructor(private readonly nytService: NYTimesService) {}
 
-  @Query(() => PaginatedStateResponse)
+  @Query(() => PaginatedStateResponse, {
+    description: 'State data provided by NY Times',
+  })
   async states(
     @Arg('filter', { nullable: true }) filter?: StateFilter
   ): Promise<PaginatedStateResponse> {

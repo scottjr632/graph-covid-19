@@ -46,9 +46,48 @@ enum Direction {
   DESC
 }
 
+type JHU {
+  data: PaginatedJHUDataResponse!
+}
+
+type JHUData {
+  fips: String
+  lat: String!
+  long: String!
+  deaths: Float!
+  recovered: Float!
+  country: String!
+
+  """Represents a PROVINCE or STATE"""
+  state: String
+  date: String!
+  hash: String
+  cases: Float!
+}
+
+input JHUFilter {
+  last: Float = 100
+  from: DateTime
+  state: String
+  sort: SortCovidInputType
+  country: String
+}
+
+type NYTimes {
+  counties(filter: CountyFilter): PaginatedCountyResponse!
+  states(filter: StateFilter): PaginatedStateResponse!
+}
+
 type PaginatedCountyResponse {
   total: Float!
   nodes: [County!]!
+  limit: Float
+  start: Float
+}
+
+type PaginatedJHUDataResponse {
+  total: Float!
+  nodes: [JHUData!]!
   limit: Float
   start: Float
 }
@@ -61,7 +100,13 @@ type PaginatedStateResponse {
 }
 
 type Query {
+  jhu(filter: JHUFilter): JHU!
+
+  """State data provided by NY Times"""
   states(filter: StateFilter): PaginatedStateResponse!
+  nytimes: NYTimes!
+
+  """County data provided ny NY Times"""
   counties(filter: CountyFilter): PaginatedCountyResponse!
 }
 
