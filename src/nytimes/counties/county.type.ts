@@ -2,10 +2,13 @@ import crypto from 'crypto';
 
 import { ObjectType, Field } from 'type-graphql';
 
-import { CovidBase } from '../common/covid/covidBase.type';
+import { CovidBase } from '../../common/covid/covidBase.type';
 
 @ObjectType()
-export class State extends CovidBase {
+export class County extends CovidBase {
+  @Field()
+  county: string;
+
   @Field()
   state: string;
 

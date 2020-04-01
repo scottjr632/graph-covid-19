@@ -1,12 +1,6 @@
-import {
-  Resolver,
-  Query,
-  FieldResolver,
-  Root,
-  Arg,
-} from 'type-graphql';
+import { Resolver, Query, FieldResolver, Root, Arg } from 'type-graphql';
 
-import { NYTimesService } from '../services/nytimes/nytimes.service';
+import { NYTimesService } from '../../services/nytimes/nytimes.service';
 
 import { PaginatedCountyResponse } from './paginated-counties.type';
 import { County } from './county.type';
@@ -16,7 +10,9 @@ import { CountyFilter } from './countyFilter.inputType';
 export class CountyResolver {
   constructor(private readonly nytService: NYTimesService) {}
 
-  @Query(() => PaginatedCountyResponse)
+  @Query(() => PaginatedCountyResponse, {
+    description: 'County data provided ny NY Times',
+  })
   async counties(
     @Arg('filter', { nullable: true }) filter?: CountyFilter
   ): Promise<PaginatedCountyResponse> {

@@ -1,4 +1,4 @@
-import { gcall } from './../test-utils/gcall';
+import { gcall } from '../../test-utils/gcall';
 
 const stateProperties = ['hash', 'date', 'cases', 'fips', 'state'];
 
@@ -26,7 +26,7 @@ const allQuery = `
 
 describe('States resolver', () => {
   it('should return a total greater than 0', async () => {
-    const res = await gcall({ source: baseQuery});
+    const res = await gcall({ source: baseQuery });
     expect(res.data).toBeDefined();
     expect(res.data.states.total).toBeGreaterThan(0);
   });
@@ -62,13 +62,13 @@ const filterState = `
 
 describe('States resolver filter', () => {
   it('should be able to get last N', async () => {
-    const res = await gcall({ source: limitTen});
+    const res = await gcall({ source: limitTen });
     const limit = 10;
     expect(res.data).toBeDefined();
     expect(res.data.states.total).toBeLessThanOrEqual(limit);
   });
   it('should filter by state', async () => {
-    const res = await gcall({ source: filterState});
+    const res = await gcall({ source: filterState });
     expect(res.data).toBeDefined();
     expect(res.data.states.total).toBeGreaterThan(0);
   });

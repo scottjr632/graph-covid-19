@@ -16,7 +16,9 @@ async function bootstrap() {
     engine: false,
   });
 
-  app.use(morgan(':remote-addr [:date[clf]] :method :url :status - :response-time ms'));
+  app.use(
+    morgan(':remote-addr [:date[clf]] :method :url :status - :response-time ms')
+  );
   server.applyMiddleware({ app, path: '/' });
 
   app.listen(PORT, () => {

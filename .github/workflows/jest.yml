@@ -1,5 +1,5 @@
 name: Jest Test
-on: [push, pull_request]
+on: [push]
 jobs:
   test:
     name: Tests

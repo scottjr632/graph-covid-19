@@ -1,6 +1,8 @@
 import parse from 'csv-parse/lib/sync';
 import axios from 'axios';
 
+import { DatasourceInterface } from '../../common/DatasourceInterface';
+
 import { County, State } from './types';
 import { COUNTY_SOURCE, STATE_SOURCE } from './constants';
 
@@ -22,7 +24,7 @@ const getStateData = async (): Promise<State[]> => {
   });
 };
 
-export class Datasource {
+export class Datasource implements DatasourceInterface {
   private static instance: Datasource;
 
   public static getInstance(): Datasource {
