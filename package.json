@@ -26,7 +26,7 @@
     "@types/axios": "^0.14.0",
     "@types/graphql": "^14.5.0",
     "apollo-engine": "^1.1.2",
-    "apollo-server": "^2.11.0",
+    "apollo-server": "^2.25.4",
     "apollo-server-express": "^2.11.0",
     "axios": "^0.19.2",
     "crypto": "^1.0.1",
